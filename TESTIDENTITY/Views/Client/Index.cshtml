@@ -1,0 +1,47 @@
+﻿@model List<TESTIDENTITY.Data.Client>
+@{
+}
+
+<h1>Clients</h1>
+
+<table class="table" id="cartTable">
+	<thead>
+		<tr>
+			<td>ClientId</td>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>Phone Number</td>
+			<td>Email Address</td>
+			<td>Address</td>
+			<td>Notes</td>
+			<td>Birthday</td>
+			<td>UserType</td>
+			<td>Action</td>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var client in Model)
+		{
+			<tr>
+				<td>@client.Id</td>
+				<td>@client.FirstName</td>
+				<td>@client.LastName</td>
+				<td>@client.PhoneNumber</td>
+				<td>@client.EmailAddress</td>
+				<td>@client.Address</td>
+				<td>@client.Notes</td>
+				<td>@client.Birthday.ToString()</td>
+				@if (client.IsAdmin)
+				{
+					<td>Admin</td>
+				}
+				else
+				{
+					<td>Client</td>
+				}
+
+					<td><a href ="Client/View/@client.Id">View</a> </td>
+			</tr>
+		}
+	</tbody>
+	<table />
