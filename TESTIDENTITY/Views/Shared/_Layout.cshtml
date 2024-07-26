@@ -4,13 +4,12 @@
 	string id = null;
 	if (IsAdmin.Count > 0)
 	{
-		if (User.IsInRole(User.Identity.Name))
+		role = role = IsAdmin.Where(x => x == "Admin" || x == "Client").FirstOrDefault();
+		id = IsAdmin[1];
+		if(role == null)
 		{
-			role = IsAdmin[4];
-			id = IsAdmin[1];
-		}
-		else
 			role = "Client";
+		}
 	}
 }
 <!DOCTYPE html>
