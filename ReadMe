@@ -1,0 +1,4 @@
+I used the built in Authorization and Authentication from .NET for admin and client.
+Clients can register on their own but cannot view it's profile yet unless added by admins. Admins can also specify what type of role they want to add for the new created users.
+
+The stored procedure created is not in the database. 
